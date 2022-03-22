@@ -1,5 +1,7 @@
 package com.network
 
+import android.telecom.Call
+import com.booksapiapp.response.BooksResponse
 import retrofit2.http.GET
 
 
@@ -18,7 +20,5 @@ import retrofit2.http.GET
 //Kitap bilgilerini çekecek fonksiyon Dao içinde yazılır.
 interface BookDAOInterface {
     @GET("all_books.php") //Api'ın son kısmı,BASE_URL'in sonuna yapıştırır ve istenilen kaynağa gitmemizi sağlar.
-    fun getBook(){
-
-    }
+    fun getBook():retrofit2.Call<BooksResponse>
 }

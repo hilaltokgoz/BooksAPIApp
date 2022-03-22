@@ -13,6 +13,11 @@ package com.network
 class ApiUtils {
     companion object{
         private const val  BASE_URL="http://books.canerture.com/" //Api linki
+
+        fun bookDAOInterfaceGet():BookDAOInterface{ //Dao daki istekleri çekip retrofite gönderecek.
+           return RetrofitClient.getClient(BASE_URL).create(BookDAOInterface::class.java)
+
+        }
     }
 
 }
